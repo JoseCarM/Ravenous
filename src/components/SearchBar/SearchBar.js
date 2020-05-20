@@ -8,18 +8,19 @@ let sortByOptions = {
 }
 
 class SearchBar extends React.Component {
+
     renderSortByOptions(){
         return Object.keys(sortByOptions).map(sortByOptions => {
-            let sortByOptionValue = sortByOptions;
+            let sortByOptionValue = sortByOptions[sortByOptions];
             return <li key={sortByOptionValue}>{sortByOptions}</li>
-        })
+        });
     }
     render() { 
         return (
             <div className="SearchBar">
                 <div className="SearchBar-sort-options">
                     <ul>
-                        {this.renderSortByOptions}
+                        {this.renderSortByOptions()}
                     </ul>
                 </div>
                 <div className="SearchBar-fields">
