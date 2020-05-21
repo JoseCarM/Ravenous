@@ -7,7 +7,7 @@ class BusinessList extends React.Component {
         return (
             <div className="BusinessList">
                 {
-                this.props.businesses.map((business) => {
+                this.props.businesses.map((business) => {       //Este comando hace el render de cada resultado arrojado por Yelp
                     return <Business business={business} key={business.id}/>
                 })
                 }

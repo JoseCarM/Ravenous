@@ -2,7 +2,7 @@ import React from 'react';
 import './Business.css'
 
 
-
+/*Este modulo completo hace el render que va de cada negocio y que termina directamente en le DOM*/
 class Business extends React.Component {
     render() { 
         return (

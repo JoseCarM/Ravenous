@@ -14,15 +14,15 @@ class App extends React.Component {
   }
   searchYelp(term, location, sortBy){
     yelp.search(term, location, sortBy).then(businesses => {
-      this.setState({businesses: businesses});
-    });
-  }
+      this.setState({businesses: businesses});    // <-- Aqui inyectamos por primera vez el resultado de yelp
+    });                                           //actualizando el estado a un arreglo de objetos respecto
+  }                                               //a la busqueda actual.
   render() { 
     return (
     <div className="App">
       <h1>ravenous</h1>
-      <SearchBar searchYelp={this.searchYelp}/>
-      <BusinessList businesses={this.state.businesses}/>
+      <SearchBar searchYelp={this.searchYelp}/>   {/*Esta propiedad extrae info de SearchBar.js para colocarlo en el query a yelp*/}
+      <BusinessList businesses={this.state.businesses}/> {/*Recibe el orden de las respuesta de Yelp segun SearchBar*/}
     </div>
     );
   }
@@ -30,26 +30,4 @@ class App extends React.Component {
  
 export default App;
 
-/* Esta chingadera ya venia y no es un componente
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
-*/
 

@@ -8,7 +8,7 @@ class SearchBar extends React.Component {
         super(props);
         this.state = {
             term: '',
-            location: '',
+            location: '',           //Estos valores son los que se utilizan para la API de yelp, lo valores por default son los mostrados.
             sortBy: 'best_match'
         };
         this.sortByOptions = {
@@ -38,12 +38,12 @@ class SearchBar extends React.Component {
         this.setState({location: event.target.value});
     }
     handleSearch(event) {
-        this.props.searchYelp(this.state.term, this.state.location, this.state.sortBy);
-        event.preventDefault()
+        this.props.searchYelp(this.state.term, this.state.location, this.state.sortBy); //<-- Aqui enviamos el estado del modulo 
+        event.preventDefault()                                                          //como parametros para la función que llama a yelp
     }
     renderSortByOptions(){
         return Object.keys(this.sortByOptions).map(sortByOptions => {
-            let sortByOptionValue = this.sortByOptions[sortByOptions];
+            let sortByOptionValue = this.sortByOptions[sortByOptions];                                  //          V  En este llamado se actualiza el valor del estado sortBy                  
             return <li key={sortByOptionValue} className={this.getSortByClass(sortByOptionValue)} onClick={this.handleSortByChange.bind(this, sortByOptionValue)}>{sortByOptions}</li>
         });
     }
