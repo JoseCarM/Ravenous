@@ -1,6 +1,6 @@
+import apiKey from './apikey'
 
 
-const apiKey = 'DqxRUdcMfTkFi1LGt75AvyCK3S9zXLhmQeHVTxLHYv2fl6hf2s1QtdyCo5dQJ1uFeUkf991-YJn03RpOc1bHuf7nwP6Xw7la03Qm_OTvt3veBbkLVyiGWip2vb_FXnYx';
 
 let yelp = {
     search(term, location, sortBy){     
